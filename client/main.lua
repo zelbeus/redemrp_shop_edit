@@ -93,7 +93,7 @@ local function OpenShopMenu(zone, pt)
     if pt == "buy" then 
         for i=1, #Config.Zones[_zone].Items, 1 do
             local item = Config.Zones[_zone].Items[i]
-            table.insert(items_list, {label = item.label, value = i , desc = Config.Texts.ItemPrice..": $"..item.price , obj =  item.object , name = item.item , zone = _zone })
+            table.insert(items_list, {label = item.label, value = i , desc = Config.Texts.ItemPrice..": $"..item.price , obj =  item.object , name = item.item , zone = _zone, image = "items/"..item.item..".png" })
         end
     elseif pt == "sell" then 
         local found = false 
@@ -103,7 +103,7 @@ local function OpenShopMenu(zone, pt)
                 if not found then 
                     found = true 
                 end
-                table.insert(items_list, {label = item.label, value = i , desc = Config.Texts.ItemPrice2..": $"..item.buy_price , obj =  item.object , name = item.item , zone = _zone })
+                table.insert(items_list, {label = item.label, value = i , desc = Config.Texts.ItemPrice2..": $"..item.buy_price , obj =  item.object , name = item.item , zone = _zone, image = "items/"..item.item..".png" })
             end
         end
         if not found then 
